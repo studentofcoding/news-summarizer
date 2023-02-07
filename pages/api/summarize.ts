@@ -33,29 +33,29 @@ export default async function handler(req: Request) {
 
     const prompt = `I want you to act like a news article summarizer. I will input a news article and your job is to convert them into a useful summary of a few sentences. Do not making things up, hallucinate, repeat sentences and make sure all sentences are easy to understand for 15 years old and complete: "${text}"`;
 
-    const payload = {
-      model: "text-davinci-003",
-      prompt,
-      temperature: 0.7,
-      top_p: 1,
-      frequency_penalty: 0,
-      presence_penalty: 1,
-      max_tokens: 200,
-      stream: true,
-      n: 1,
-    };
-
     // const payload = {
-    //   model: "text-chat-davinci-002-20221122",
+    //   model: "text-davinci-003",
     //   prompt,
-    //   temperature: 0,
+    //   temperature: 0.7,
     //   top_p: 1,
     //   frequency_penalty: 0,
     //   presence_penalty: 1,
-    //   max_tokens: 400,
+    //   max_tokens: 200,
     //   stream: true,
     //   n: 1,
     // };
+
+    const payload = {
+      model: "text-chat-davinci-002-20221122",
+      prompt,
+      temperature: 0,
+      top_p: 1,
+      frequency_penalty: 0,
+      presence_penalty: 1,
+      max_tokens: 400,
+      stream: true,
+      n: 1,
+    };
 
     const stream = await OpenAIStream(payload);
     return new Response(stream);
