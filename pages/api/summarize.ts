@@ -33,10 +33,22 @@ export default async function handler(req: Request) {
 
     const prompt = `I want you to act like a news article summarizer. I will input a news article and your job is to convert them into a useful summary of a few sentences. Do not repeat sentences and make sure all sentences are clear and complete: "${text}"`;
 
+    // const payload = {
+    //   model: "text-davinci-003",
+    //   prompt,
+    //   temperature: 0.7,
+    //   top_p: 1,
+    //   frequency_penalty: 0,
+    //   presence_penalty: 0,
+    //   max_tokens: 200,
+    //   stream: true,
+    //   n: 1,
+    // };
+
     const payload = {
-      model: "text-davinci-003",
+      model: "text-chat-davinci-002-20221122",
       prompt,
-      temperature: 0.7,
+      temperature: 0.3,
       top_p: 1,
       frequency_penalty: 0,
       presence_penalty: 0,
