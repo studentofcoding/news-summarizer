@@ -48,7 +48,7 @@ export default async function handler(req: Request) {
     const payload = {
       model: "text-chat-davinci-002-20221122",
       prompt,
-      temperature: 0.3,
+      temperature: 0.7,
       top_p: 1,
       frequency_penalty: 0,
       presence_penalty: 0,
